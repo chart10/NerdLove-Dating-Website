@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cea48d0b-ce85-455b-ae02-0e13d8eaee6f" name="Codd Server">
+        <fileTransfer rootFolder="/~chart10/" accessType="SFTP" host="codd.cs.gsu.edu" port="22" sshConfigId="bd08d784-deb7-4051-9b15-17753c0ca302" sshConfig="chart10@codd.cs.gsu.edu:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
