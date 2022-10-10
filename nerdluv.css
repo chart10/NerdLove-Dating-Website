@@ -12,27 +12,32 @@ You should not need to modify this file.  Your pages should work with it as-is.
 a {
     color: #F44;
     text-decoration: none;
+    margin: 1em;
 }
 
 a:hover {
     background-color: #FFA;
+    margin: 1em;
 }
 
 a img {
     border: none;
+    margin: 0.5em;
 }
 
-#bannerarea {
-    margin-bottom: 2em;
+.bannerarea {
+    margin: 2em 1em 2em 0;
+
 }
 
 body {
     background-color: white;
     padding-left: 1em;
+    margin: 0 20%;
 }
 
 body > div, form {
-    overflow: hidden;
+    /*overflow: hidden;*/
     width: 35em;
 }
 
@@ -42,9 +47,10 @@ div {
 
 /* form styles */
 fieldset {
-    background-color: #E0E0FF;
-    border: 2px outset gray;
+    padding: 20px;
+    background-color: lavender;
     border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
 }
 
 /* the bold text labels to the left of each form field */
@@ -64,6 +70,7 @@ input[type="submit"] {
     background-color: #FAA;
     font-size: 120%;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 legend {
