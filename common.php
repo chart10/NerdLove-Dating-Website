@@ -1,7 +1,59 @@
 <!-- Christian Hart 001-68-3628 -->
 
 <?php
-// Identify the user in singles.txt
+
+// Signup Page: Verify that user input data is correct
+function checkUserInfo ($name, $type, $ageLow, $ageHigh) {
+    // Check that name field is not empty
+    if ($name == "") {
+        echo "<h1>Error! Invalid user input.</h1><br>";
+        echo "<p>You're killing me, Smalls! Make sure you go back and actually 
+                enter a name this time. Try the keys in front of you. They're fun to 
+                press!</p><br>";
+        echo "<a class='inline' href='signup.php'>
+            <img src='imgs/pixel-heart.png' width='25px'>Back to sign up page</a>";
+        exit;
+    }
+    // Check if personality type is formatted correctly
+    if (preg_match('([i|e][n|s][f|t][j|p])i',$type) == 0) {
+        echo "<h1>Error! Invalid user input.</h1><br>";
+        echo "<p>Not so fast, Zorro! It looks like you entered your personality type
+            incorrectly. Make sure you check out
+            <a class='inline' href='https://www.humanmetrics.com/personality'>
+            this page</a> for more info on your type.</p><br>";
+        echo "<a class='inline' href='signup.php'>
+            <img src='imgs/pixel-heart.png' width='25px'>Back to sign up page</a>";
+        exit;
+    }
+    // Check if age range has been entered correctly
+    if ($ageHigh < $ageLow) {
+        echo "<h1>Error! Invalid user input.</h1><br>";
+        echo "<p>You forgot how numbers work again, didn't you? Make sure you go back
+            and enter a valid age range. Hint: the first number should be lower than
+            the second.</p><br>";
+        echo "<a class='inline' href='signup.php'>
+            <img src='imgs/pixel-heart.png' width='25px'>Back to sign up page</a>";
+        exit;
+    }
+}
+
+// Signup Page: Check if user is already registered
+function userAlready($name) {
+    // find user in singles.txt by $name, then convert info into string array
+    $myfile = fopen("singles.txt", "r") or die("Unable to open file!");
+    while (! feof($myfile)) {
+        $line = fgets($myfile);
+        $params = explode(",",$line,7);
+        if (strcasecmp($params[0],$name) == 0) {
+            //echo $params[0];
+            echo "<h1>Error! $params[0] is aready registered.</h1>";
+            echo "<p>It looks like you're already signed up. You can check your
+                matches <a class='inline' href='matches.php'>here</a>!</p>";
+            exit;
+        }
+    }
+}
+// Matches Page: Identify the user in singles.txt
 function userSearch($name) {
     // find user in singles.txt by $name, then convert info into string array
     $myfile = fopen("singles.txt", "r") or die("Unable to open file!");
@@ -42,6 +94,11 @@ function searchSingles($name, $sex, $age, $type, $os, $ageLow, $ageHigh) {
             $matches[] = $params;
         }
     }
+    if (count($matches) == 0) {
+        echo "Oops! It looks like you don't have any matches right now.
+            Have you considered lowering your standards?";
+
+    }
     foreach ($matches as $suitor) {
         matchTemplate($suitor);
     }
@@ -62,7 +119,7 @@ function matchTemplate($matchedUser) {
     </div>";
 }
 
-// Compare user and match's Myers-Briggs type
+// Compare user and match's Myers-Briggs type, array for-loop approach
 function typeComp ($user,$match) {
     for ($x = 0; $x < strlen($user); $x++) {
         if ($user[$x] == $match[$x]) {

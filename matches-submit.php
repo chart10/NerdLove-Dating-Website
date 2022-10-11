@@ -1,5 +1,6 @@
 <!-- Christian Hart 001-68-3628 -->
 
+<!doctype html>
 <html>
     <head>
         <title>NerdLuv Your Matches</title>
@@ -10,10 +11,12 @@
         <img class="bannerarea" src="imgs/pixel-heart.png" height="70">
 
         <?php include("common.php");
+
         if ($_GET["name"] == "") {
-            echo "<h1>You're killing me, Smalls! Make sure you go back and actually 
+            echo "<<h1>Error! Invalid user input.</h1><br>";
+            echo "<p>You're killing me, Smalls! Make sure you go back and actually 
                 enter a name this time. Try the keys in front of you. They're fun to 
-                press!</h1>";
+                press!</p>";
             exit;
         }
         $userDetails = userSearch($_GET["name"]);

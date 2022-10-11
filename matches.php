@@ -1,5 +1,6 @@
 <!-- Christian Hart 001-68-3628 -->
 
+<!doctype html>
 <html>
     <head>
         <title>NerdLuv Log In</title>

@@ -24,7 +24,10 @@ a:hover {
 
 a img {
     border: none;
-    margin: 0.5em;
+}
+
+a.inline {
+    margin: 0;
 }
 
 .bannerarea {
