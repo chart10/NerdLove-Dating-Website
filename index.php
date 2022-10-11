@@ -10,7 +10,7 @@
         <img class="bannerarea" src="imgs/pixel-heart.png" height="70">
 
         <h1>Welcome!</h1>
-        <a href="">
+        <a href="signup.php">
             <img src="imgs/pixel-heart.png" width="25px">
             Sign up for a new account</a>
         <br>

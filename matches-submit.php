@@ -8,8 +8,6 @@
     <body>
         <img class="bannerarea" src="imgs/nerdluv-logo-alt.png" width="300">
         <img class="bannerarea" src="imgs/pixel-heart.png" height="70">
-        <h1>Welcome back, <?php echo $_GET["name"]; ?>!</h1>
-        <h1>Here are your current matches:</h1>
 
         <?php include("common.php"); ?>
         <?php
