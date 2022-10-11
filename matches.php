@@ -13,7 +13,7 @@
             <fieldset>
                 <legend>Returning User:</legend>
                 <label class="left" for="name">Name:</label>
-                <input type="text" name="name" required>
+                <input type="text" name="name" size="16">
 
                 <br>
                 <input type="submit" value="View My Matches"><br>

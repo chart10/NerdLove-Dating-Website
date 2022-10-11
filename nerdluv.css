@@ -1,5 +1,7 @@
+/* Edited by Christian Hart 001-68-3628 */
+
 /*
- Assignment 04: NerdLuv
+ Assignment 03: NerdLuv
 You should link to this provided stylesheet from all of your pages.
 You should not need to modify this file.  Your pages should work with it as-is.
 */
@@ -52,6 +54,9 @@ fieldset {
     background-color: lavender;
     border-radius: 10px;
     box-shadow: 2px 2px 4px black;
+}
+fieldset a, fieldset a:hover {
+    margin: 0;
 }
 
 /* the bold text labels to the left of each form field */

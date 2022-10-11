@@ -13,27 +13,29 @@
             <fieldset>
                 <legend>New User Signup:</legend>
                 <label class="left" for="name">Name:</label>
-                <input type="text" name="name" required><br>
+                <input type="text" size="16" name="name" required><br>
                 <label class="left" for="gender">Gender: </label>
                 <input type="radio" id="male" name="gender" value="M">
                 <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="F">
+                <input type="radio" id="female" checked="checked" name="gender" value="F">
                 <label for="female">Female</label>
                 <input type="radio" id="nonbinary" name="gender" value="NB">
                 <label for="nonbinary">Non-Binary</label><br>
                 <label class="left" for="age">Age:</label>
-                <input type="number" size="10" min="18" max="128" name="age" required><br>
+                <input type="number" size="6" min="18" max="99" name="age" required><br>
                 <label class="left" for="type">Personality Type:</label>
-                <input type="text" size="10" name="type" required><br>
+                <input type="text" size="6" maxlength="4" name="type" required>
+                (<a href="https://www.humanmetrics.com/personality">Don't know your type?</a>)
+                <br>
                 <label class="left" for="os">Favorite OS:</label>
                 <select name="os" required>
-                    <option value="Mac">Mac</option>
                     <option value="Windows">Windows</option>
+                    <option value="Mac">Mac OS</option>
                     <option value="Linux">Linux</option>
                 </select><br>
                 <label class="left" for="seeking">Seeking Age:</label>
-                <input type="number" size="10" min="18" max="128" name="ageLow">
-                 to <input type="number" size="10" min="18" max="128" name="ageHigh">
+                <input type="number" size="6" min="18" max="99" placeholder="min" name="ageLow">
+                 to <input type="number" size="6" min="18" max="99" placeholder="max" name="ageHigh">
                 <br>
                 <input type="submit" value="Sign Up"><br>
             </fieldset>

@@ -11,11 +11,11 @@
 
     <?php
     $myfile = fopen("singles.txt", "a") or die("Unable to open file!");
-    $user = "$_POST[name]" . "," . "$_POST[gender]" . "," . "$_POST[age]" . "," . "$_POST[type]"
-        . "," . "$_POST[os]" . "," . "$_POST[ageLow]" . "," . "$_POST[ageHigh]" . " \n";
+    $user = "$_POST[name]" . "," . "$_POST[gender]" . "," . "$_POST[age]" . "," .
+        strtoupper("$_POST[type]") . "," . "$_POST[os]" . "," . "$_POST[ageLow]"
+        . "," . "$_POST[ageHigh]" . " \n";
     fwrite($myfile, $user);
     fclose($myfile);
-
 
     echo "<h1>Thank you!</h1>";
 

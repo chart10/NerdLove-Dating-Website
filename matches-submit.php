@@ -9,16 +9,14 @@
         <img class="bannerarea" src="imgs/nerdluv-logo-alt.png" width="300">
         <img class="bannerarea" src="imgs/pixel-heart.png" height="70">
 
-        <?php include("common.php"); ?>
-        <?php
-            //echo readfile("singles.txt");
-
-            $userDetails = userSearch($_GET["name"]);
-            //echo $userDetails;
-//            for($x = 0; $x < count($userDetails); $x++) {
-//                echo "<strong>$userDetails[$x]" . ". </strong>";
-//            }
-            echo "<br><br>";
+        <?php include("common.php");
+        if ($_GET["name"] == "") {
+            echo "<h1>You're killing me, Smalls! Make sure you go back and actually 
+                enter a name this time. Try the keys in front of you. They're fun to 
+                press!</h1>";
+            exit;
+        }
+        $userDetails = userSearch($_GET["name"]);
             searchSingles($userDetails[0],$userDetails[1],$userDetails[2],$userDetails[3],
                 $userDetails[4],$userDetails[5],$userDetails[6]);
 

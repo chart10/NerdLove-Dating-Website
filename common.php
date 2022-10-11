@@ -1,7 +1,6 @@
 <!-- Christian Hart 001-68-3628 -->
 
 <?php
-
 // Identify the user in singles.txt
 function userSearch($name) {
     // find user in singles.txt by $name, then convert info into string array
@@ -24,7 +23,7 @@ function userSearch($name) {
 
 // Narrow user list down to qualifying matches
 function searchSingles($name, $sex, $age, $type, $os, $ageLow, $ageHigh) {
-    $myfile = fopen("singles.txt", "r");
+    $myfile = fopen("singles.txt", "r") or die("Unable to open file!");
     $matches = array();
     //populate array with lines of singles.txt that qualify
     while (! feof($myfile)) {
@@ -33,10 +32,10 @@ function searchSingles($name, $sex, $age, $type, $os, $ageLow, $ageHigh) {
         // Qualifications
         if ($params[1] != $sex &&       // Opposite sex
             $params[2] >= $ageLow &&
-            $params[2] <= $ageHigh &&    // Within user's age range
+            $params[2] <= $ageHigh &&   // Within user's age range
             $age >= $params[5] &&
             $age <= $params[6] &&       // User's within their age range
-            $params[4] == $os &&
+            $params[4] == $os &&        // Same OS preference
             typeComp($type,$params[3])  // Share at least one Myers-Briggs type
             ) {
                 // Return array of qualifying matches
@@ -46,42 +45,10 @@ function searchSingles($name, $sex, $age, $type, $os, $ageLow, $ageHigh) {
     foreach ($matches as $suitor) {
         matchTemplate($suitor);
     }
-//    for ($x = 0; $x < count($matches); $x++) {
-//        for ($y = 0; $y < count($matches[$x][$y]); $y++) {
-//            echo $params[$y] . ", ";
-//        }
-//        echo "<br>";
-//    }
-//    echo "<br>";
     return $matches;
 }
 
-// Create class for each successful match
-//class Match {
-//    public $name;
-//    public $sex;
-//    public $age;
-//    public $type;
-//    public $os;
-//    public $ageLow;
-//    public $ageHigh;
-//
-//    function __construct($name, $sex, $age, $type, $os, $ageLow, $ageHigh) {
-//        $this->name = $name;
-//        $this->sex;
-//        $this->age;
-//        $this->type;
-//        $this->os;
-//        $this->ageLow;
-//        $this->ageHigh;
-//    }
-//    function printMatch() {
-//        echo "$name" . "$sex" . "$age" . "$type" . "$os" . "$ageLow" . "$ageHigh";
-//    }
-//}
-
-
-    // Convert qualifying lines into html match divs
+// Convert qualifying lines into html match divs
 function matchTemplate($matchedUser) {
     echo "<div class='match'>
         <img src='imgs/profile.png' alt='profile picture' width='200'>
@@ -94,11 +61,6 @@ function matchTemplate($matchedUser) {
         </ul>
     </div>";
 }
-    //output match objects as html divs
-
-
-    //print $name;
-    //searchSingles($name, $sex, $os, $type, $ageLow, $ageHigh);
 
 // Compare user and match's Myers-Briggs type
 function typeComp ($user,$match) {
@@ -108,5 +70,4 @@ function typeComp ($user,$match) {
         }
     }
     return false;
-
 }
