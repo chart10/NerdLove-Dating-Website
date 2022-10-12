@@ -24,18 +24,34 @@
             // Put gender preference array into a string
             $prefs = implode("",$_POST['pref']);
 
+
+
+
             // Add the user info to singles2.txt
             $myfile = fopen("singles2.txt", "a") or die("Unable to open file!");
             $user = "$_POST[name]" . "," . "$_POST[gender]" . "," . "$_POST[age]" . "," .
                 strtoupper("$_POST[type]") . "," . "$_POST[os]" . "," . "$_POST[ageLow]"
-                . "," . "$_POST[ageHigh]" . "," . "$prefs" . "$_POST[photo]" . " \n";
+                . "," . "$_POST[ageHigh]" . "," . "$prefs" . "," . "$_POST[photo]" . " \n";
             fwrite($myfile, $user);
             fclose($myfile);
 
-            $target_dir = "img/profiles/";
-            $target_file = $target_dir . basename($_FILES["photo"]["name"]);
-            $uploadOk = 1;
-            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            // Implementation of profile pic upload: UNFINISHED
+//            $profilepic = strtolower(str_replace(" ","-","$_POST[name]"));
+//
+//            $target_dir = "img/profiles/";
+//            $target_file = $target_dir . basename($_FILES["photo"]["$profilepic"]);
+//            echo "$target_file<br>";
+//            $uploadOk = 1;
+//            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+//
+//            if (move_uploaded_file($target_file, $target_dir)) {
+//                echo "The file ". $target_file . " has been uploaded.<br>";
+//            } else {
+//                echo "Sorry, there was an error uploading your file.<br>";
+//            }
+
+
+
 
             echo "<h1>Thank you!</h1>";
 

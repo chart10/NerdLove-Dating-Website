@@ -117,8 +117,8 @@ function searchSingles($name, $sex, $age, $type, $os, $ageLow, $ageHigh, $prefs)
 // Convert qualifying lines into html match divs
 function matchTemplate($matchedUser) {
 
-    // To find user image, turn user name into a string, all lower case, no spaces
-    $imgpic = "imgs/profiles/" . strtolower(str_replace(" ","",$matchedUser[0])) . ".jpg";
+    // To find user image, turn user name into a string, all lower case, dashes
+    $imgpic = "imgs/profiles/" . strtolower(str_replace(" ","-",$matchedUser[0])) . ".jpg";
     if (!file_exists($imgpic)) {
         $imgpic = "imgs/profile.png";
     }

@@ -50,8 +50,10 @@
                     <input type="checkbox" id="female" name="pref[]" value="F"/>Women
                     <input type="checkbox" id="nonbinary" name="pref[]" value="N"/>Non-Binary
                 <br>
-                <label class="left" for="photo">Photo:</label>
-                    <input type="file" name="photo" accept="image/jpg">
+
+                <!-- Implementation of profile pic upload: UNFINISHED -->
+<!--                <label class="left" for="photo">Photo:</label>-->
+<!--                    <input type="file" name="photo" accept="image/jpg,image/jpeg">-->
                 <br>
                 <input type="submit" value="Sign Up"><br>
             </fieldset>
