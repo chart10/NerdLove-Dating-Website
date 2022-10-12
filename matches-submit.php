@@ -1,4 +1,5 @@
 <!-- Christian Hart 001-68-3628 -->
+<!-- NerdLuv Match Query results -->
 
 <!doctype html>
 <html>
@@ -7,26 +8,28 @@
         <link rel="stylesheet" href="nerdluv.css">
     </head>
     <body>
-        <img class="bannerarea" src="imgs/nerdluv-logo-alt.png" width="300">
-        <img class="bannerarea" src="imgs/pixel-heart.png" height="70">
+        <img class="bannerarea" src="imgs/nerdluv-logo-alt.png"
+             alt="Nerd Luv: Where Meek Geeks Meet" width="300">
+        <img class="bannerarea" src="imgs/pixel-heart.png"
+             alt="pixel heart logo" height="70">
 
-        <?php include("common.php");
-
-        if ($_GET["name"] == "") {
-            echo "<<h1>Error! Invalid user input.</h1><br>";
-            echo "<p>You're killing me, Smalls! Make sure you go back and actually 
-                enter a name this time. Try the keys in front of you. They're fun to 
-                press!</p>";
-            exit;
-        }
-        $userDetails = userSearch($_GET["name"]);
+        <?php include('common.php');
+            // Check if name field is empty
+            if ($_GET["name"] == "") {
+                echo "<h1>Error! Invalid user input.</h1><br>";
+                echo "<p>You're killing me, Smalls! Make sure you go back and actually 
+                    enter a name this time. Try the keys in front of you. They're fun to 
+                    press!</p>";
+                echo "<a href='matches.php'><img src='imgs/pixel-heart.png' width='25px'>
+                Back to match search</a>";
+                exit;
+            }
+            // Find user in singles2.txt
+            $userDetails = userSearch($_GET["name"]);
+            // Find matches based on user preferences
             searchSingles($userDetails[0],$userDetails[1],$userDetails[2],$userDetails[3],
-                $userDetails[4],$userDetails[5],$userDetails[6]);
-
+                $userDetails[4],$userDetails[5],$userDetails[6],$userDetails[7]);
         ?>
-        <!-- If current matches == 0, return this string:
-            "<p>Oops! It looks like you don't have any matches right now.</p>"
-            "<p>Have you considered lowering your standards?</p>" -->
 
         <br>
         <p>Results and page (C) Copyright NerdLuv Inc.</p>

@@ -1,13 +1,17 @@
 <!-- Christian Hart 001-68-3628 -->
+<!-- NerdLove Landing Page -->
 
+<!doctype html>
 <html>
     <head>
         <title>NerdLuv Home Page</title>
         <link rel="stylesheet" href="nerdluv.css">
     </head>
     <body>
-        <img class="bannerarea" src="imgs/nerdluv-logo-alt.png" width="300">
-        <img class="bannerarea" src="imgs/pixel-heart.png" height="70">
+        <img class="bannerarea" src="imgs/nerdluv-logo-alt.png"
+             alt="Nerd Luv: Where Meek Geeks Meet" width="300">
+        <img class="bannerarea" src="imgs/pixel-heart.png"
+             alt="pixel heart logo" height="70">
 
         <h1>Welcome!</h1>
         <a href="signup.php">

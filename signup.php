@@ -1,4 +1,5 @@
 <!-- Christian Hart 001-68-3628 -->
+<!-- NerdLuv Signup Page to register a new account -->
 
 <!doctype html>
 <html>
@@ -7,10 +8,13 @@
         <link rel="stylesheet" href="nerdluv.css">
     </head>
     <body>
-        <img class="bannerarea" src="imgs/nerdluv-logo-alt.png" width="300">
-        <img class="bannerarea" src="imgs/pixel-heart.png" height="70">
+        <img class="bannerarea" src="imgs/nerdluv-logo-alt.png"
+             alt="Nerd Luv: Where Meek Geeks Meet" width="300">
+        <img class="bannerarea" src="imgs/pixel-heart.png"
+             alt="pixel heart logo" height="70">
 
-        <form action="signup-submit.php" method="post">
+
+    <form action="signup-submit.php" method="post">
             <fieldset>
                 <legend>New User Signup:</legend>
                 <label class="left" for="name">Name:</label>
