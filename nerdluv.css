@@ -70,6 +70,7 @@ fieldset .column {
     float: left;
     width: 11em;
     font-weight: bold;
+    /*margin: 0.25em;*/
 }
 
 h1 {
@@ -78,6 +79,9 @@ h1 {
 
 input, select {
     margin: 0.25em;
+}
+#male, #female, #nonbinary {
+    margin-bottom: 0.5em;
 }
 
 input[type="submit"] {

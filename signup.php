@@ -18,35 +18,40 @@
             <fieldset>
                 <legend>New User Signup:</legend>
                 <label class="left" for="name">Name:</label>
-                <input type="text" size="16" name="name"><br>
+                    <input type="text" size="16" name="name"><br>
                 <label class="left" for="gender">Gender: </label>
-                <input type="radio" id="male" name="gender" value="M">
-                <label for="male">Male</label>
-                <input type="radio" id="female" checked="checked" name="gender" value="F">
-                <label for="female">Female</label>
-                <input type="radio" id="nonbinary" name="gender" value="N">
-                <label for="nonbinary">Non-Binary</label><br>
+                    <input type="radio" id="male" name="gender" value="M">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" checked="checked" name="gender" value="F">
+                    <label for="female">Female</label>
+                    <input type="radio" id="nonbinary" name="gender" value="N">
+                    <label for="nonbinary">Non-Binary</label>
                 <label class="left" for="age">Age:</label>
-                <input type="number" size="6" min="18" max="99" name="age" required><br>
+                    <input type="number" size="6" min="18" max="99" name="age" required><br>
                 <label class="left" for="type">Personality Type:</label>
-                <input type="text" size="6" maxlength="4" name="type" required>
-                (<a href="https://www.humanmetrics.com/personality">
-                    Don't know your type?</a>)
+                    <input type="text" size="6" maxlength="4" name="type" required>
+                        (<a href="https://www.humanmetrics.com/personality">
+                            Don't know your type?</a>)
                 <br>
                 <label class="left" for="os">Favorite OS:</label>
-                <select name="os" required>
-                    <option value="Windows">Windows</option>
-                    <option value="Mac">Mac OS</option>
-                    <option value="Linux">Linux</option>
-                </select><br>
+                    <select name="os" required>
+                        <option value="Windows">Windows</option>
+                        <option value="Mac">Mac OS</option>
+                        <option value="Linux">Linux</option>
+                    </select><br>
                 <label class="left" for="ageLow">Seeking Age:</label>
-                <input type="number" size="6" min="18" max="99" placeholder="min" name="ageLow" required>
-                 to <input type="number" size="6" min="18" max="99" placeholder="max" name="ageHigh" required>
+                    <input type="number" size="6" min="18" max="99" placeholder="min"
+                           name="ageLow" required>
+                    to <input type="number" size="6" min="18" max="99" placeholder="max"
+                              name="ageHigh" required>
                 <br>
                 <label class="left" for="male">Looking For:</label>
-                <input type="checkbox" id="male" name="pref[]" value="M"/>Men
-                <input type="checkbox" id="female" name="pref[]" value="F"/>Women
-                <input type="checkbox" id="nonbinary" name="pref[]" value="N"/>Non-Binary
+                    <input type="checkbox" id="male" name="pref[]" value="M"/>Men
+                    <input type="checkbox" id="female" name="pref[]" value="F"/>Women
+                    <input type="checkbox" id="nonbinary" name="pref[]" value="N"/>Non-Binary
+                <br>
+                <label class="left" for="photo">Photo:</label>
+                    <input type="file" name="photo" accept="image/jpg">
                 <br>
                 <input type="submit" value="Sign Up"><br>
             </fieldset>

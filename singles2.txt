@@ -42,7 +42,6 @@ Roberta Williams,F,57,ENFP,Windows,54,67,M
 Rosie O Donnell,F,46,ENFJ,Windows,30,50,F
 Sarah Connor,F,53,ISFP,Windows,49,67,M
 Seven of Nine,F,40,ISTJ,Windows,12,50,MF
-Stewie Griffin,M,1,INTP,Mac OS X,1,59,M
 Stuart Reges,M,48,INFP,Mac OS X,18,35,MF
 Tpol,F,35,ISTJ,Windows,30,39,M
 Trinity,F,42,ESFP,Linux,35,55,M
@@ -51,6 +50,4 @@ Valentina Tereshkova,F,71,ENTJ,Mac OS X,55,65,M
 Vint Cerf,M,67,ISFP,Mac OS X,28,55,MF
 Yukihiro Matsumoto,M,45,ENTP,Mac OS X,10,25,MF
 Zelda,F,59,ESTP,Windows,40,62,M
-Pinhead,F,33,INTJ,Windows,18,99,MFN
-Shaka Kahn,F,43,ENFP,Linux,25,45,F 
-Hank Hill,M,46,ENFP,Windows,35,55,MF 
+

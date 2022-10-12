@@ -28,9 +28,14 @@
             $myfile = fopen("singles2.txt", "a") or die("Unable to open file!");
             $user = "$_POST[name]" . "," . "$_POST[gender]" . "," . "$_POST[age]" . "," .
                 strtoupper("$_POST[type]") . "," . "$_POST[os]" . "," . "$_POST[ageLow]"
-                . "," . "$_POST[ageHigh]" . "," . "$prefs" . " \n";
+                . "," . "$_POST[ageHigh]" . "," . "$prefs" . "$_POST[photo]" . " \n";
             fwrite($myfile, $user);
             fclose($myfile);
+
+            $target_dir = "img/profiles/";
+            $target_file = $target_dir . basename($_FILES["photo"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
             echo "<h1>Thank you!</h1>";
 

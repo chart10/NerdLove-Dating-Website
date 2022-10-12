@@ -116,8 +116,14 @@ function searchSingles($name, $sex, $age, $type, $os, $ageLow, $ageHigh, $prefs)
 }
 // Convert qualifying lines into html match divs
 function matchTemplate($matchedUser) {
+
+    // To find user image, turn user name into a string, all lower case, no spaces
+    $imgpic = "imgs/profiles/" . strtolower(str_replace(" ","",$matchedUser[0])) . ".jpg";
+    if (!file_exists($imgpic)) {
+        $imgpic = "imgs/profile.png";
+    }
     echo "<div class='match'>
-        <img src='imgs/profile.png' alt='profile picture' width='200'>
+        <img src='$imgpic' alt='imgs/profile.png' width='200'>
         <p>$matchedUser[0]</p>
         <ul>
             <li><strong>Gender:</strong> $matchedUser[1]</li>
